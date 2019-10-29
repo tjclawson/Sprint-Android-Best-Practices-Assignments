@@ -40,9 +40,9 @@ class MainActivity : AppCompatActivity() {
 
         val service = retrofit.create(RandomNumberService::class.java)
 
-        disposable = service.getRandomNumbers("2", "unit8").subscribeOn(Schedulers.io())
+        disposable = service.getRandomNumbers("2", "uint8").subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe ({ data -> Log.i("BIGBRAIN", data.toString()) },
+            .subscribe ({ data -> et_interest_rate.setText("${data.data[0].toDouble()/100.0}") },
                 { data -> Log.i("BIGBRAIN", data.message)})
 
 
