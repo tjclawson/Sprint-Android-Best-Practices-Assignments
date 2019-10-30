@@ -6,6 +6,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.firebase.analytics.FirebaseAnalytics
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +16,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        FirebaseAnalytics.getInstance(this).setCurrentScreen(this, "MainActivity", "Yeet")
 
         context = this
 
@@ -41,6 +44,13 @@ class MainActivity : AppCompatActivity() {
         if (requestCode == Constants.NEW_BOOK_REQUEST_CODE && resultCode == RESULT_OK) {
             if (data != null) {
                 BooksController.handleEditActivityResult(data)
+                val bookCsv = data.getStringExtra(Constants.EDIT_BOOK_TAG)
+                val book = Book(bookCsv)
+                val bundle = Bundle()
+                bundle.putString("title", book.title)
+                bundle.putString("reasonToRead", book.reasonToRead)
+                bundle.putBoolean("isHasBeenRead", book.isHasBeenRead)
+                FirebaseAnalytics.getInstance(this).logEvent("book_added", bundle)
             }
         }
         if (requestCode == Constants.EDIT_BOOK_REQUEST_CODE && resultCode == RESULT_OK) {
