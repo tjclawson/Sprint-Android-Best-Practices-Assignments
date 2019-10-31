@@ -1,4 +1,4 @@
-package com.example.daggerassigment
+package com.lambdaschool.basicandroidnetworking
 
 import org.junit.Test
 
