@@ -9,6 +9,7 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
+        //retrofitComponent = DaggerRetrofitComponent.create()
         retrofitComponent = DaggerRetrofitComponent.create()
     }
 }

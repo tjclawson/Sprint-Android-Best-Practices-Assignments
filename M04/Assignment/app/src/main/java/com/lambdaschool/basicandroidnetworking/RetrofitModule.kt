@@ -10,11 +10,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-class RetrofitModule {
+object RetrofitModule {
 
-    companion object {
-        internal const val BASE_URL = "https://api.adviceslip.com/"
-    }
+
+    const val BASE_URL = "https://api.adviceslip.com/"
+
 
     @Provides
     @Singleton
@@ -28,7 +28,6 @@ class RetrofitModule {
     }
 
     @Provides
-    fun provideAdvice(retrofit: Retrofit): Call<AdviceMsg> {
-        return retrofit.create(AdviceAPI::class.java).randomAdvice()
-    }
+    fun provideAdvice(retrofit: Retrofit) = retrofit.create(AdviceAPI::class.java)
+
 }

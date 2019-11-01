@@ -33,7 +33,7 @@ class RetrofitActivity : AppCompatActivity(), Callback<AdviceMsg> {
         (application as App).retrofitComponent.inject(this)
 
         fetchNetworkAPIRetrofitButton.setOnClickListener {
-            adviceDagger.randomAdvice().enqueue(this)
+           adviceDagger.randomAdvice().enqueue(this)
         }
 
         fetchNetworkAPIOkHttpButton.setOnClickListener {
