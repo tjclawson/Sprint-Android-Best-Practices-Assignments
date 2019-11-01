@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "460897551985",
+    "firebase_url": "https://android-analytics-assignment.firebaseio.com",
+    "project_id": "android-analytics-assignment",
+    "storage_bucket": "android-analytics-assignment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460897551985:android:5c92386ddcca1cfc973dd0",
+        "android_client_info": {
+          "package_name": "com.lambdaschool.readinglist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460897551985-53q5iv9dkvplg0f3cttuq8gglcg05gvc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lambdaschool.readinglist",
+            "certificate_hash": "be4a35e51a1fe5806ee9ee6f1da672d601711142"
+          }
+        },
+        {
+          "client_id": "460897551985-9rsha6rskr33p9vt90tajospppbt9dq0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAzeUOLgfkTtsynl9Q4Hkzqx01dUT4eAo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "460897551985-9rsha6rskr33p9vt90tajospppbt9dq0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
